@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-site2
+  labels:
+    app: blog-site2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blog-site2
+  template:
+    metadata:
+      labels:
+        app: blog-site2
+    spec:
+      containers:
+      - name: blog-site2
+        image: geonetrinity/gt.site2:v1
+        ports:
+        - containerPort: 80
